@@ -1,0 +1,25 @@
+body {
+    font: sans-serif;
+    margin:0px;
+    padding: 0px;
+    align-items: center;
+    background-color: rgb(217, 217, 217);
+}
+.tasks.table, .tasks.table td, .tasks.table th {
+    border: 1px solid #2f2f2f;
+    padding: 5px;
+    border-collapse: collapse;
+}
+.center {
+    margin: auto;
+    width: 80%;
+  }
+.content {
+    background-color: white;
+    padding: 20px;
+    height:100vh;
+}
+.add_form {
+    padding-bottom: 15px;
+    font-size: 16px;
+}

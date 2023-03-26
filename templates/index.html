@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+<!-- This is <head> section of a page -->
+{% block head %}
+<title>This is my second Flask App</title>
+{% endblock %}
+
+
+<!-- This is <body> section of a page -->
+{% block body %}
+<div class="content center">
+    <h1>Task Master</h1>
+    <form action="/", method="POST" class="add_form">
+        <input type="text", name="content", id="content"> 
+        <input type="submit" value="Add task">
+    </form>
+    {% if tasks|length < 1 %}
+    <h4>There are no tasks. Add one!</h4>
+    {% else %}
+    <table class="tasks table">
+        <tr>
+            <th>ID</th>
+            <th>Task</th>
+            <th>Date Added</th>
+            <th>Actions</th> 
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{ task.id }}">Delete</a>
+                    <br>
+                    <a href="/update/{{ task.id }}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+</div>
+{% endblock %}
