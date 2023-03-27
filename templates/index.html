@@ -11,7 +11,7 @@
 <div class="container">
     <h1>Task Master</h1>
     <form action="/", method="POST" class="grid">
-        <input type="text", name="content", id="content"> 
+        <input type="text", name="content", id="content" required> 
         <input type="submit" value="Add task">
     </form>
     {% if tasks|length < 1 %}
