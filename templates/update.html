@@ -8,10 +8,13 @@
     
     <!-- This is <body> section of a page -->
     {% block body %}
-    <div class="content center">
+    <div class="container">
     <h1>Update Task</h1>
-    <form action="/update/{{ task.id }}", method="POST" class="add_form">
-        <input type="text", name="content", id="content" value="{{ task.content }}"> 
+    <form action="/update/{{ task.id }}", method="POST">
+        <label for="firstname">
+            Edit task
+            <input type="text" id="content" name="content" value="{{ task.content }}" required>
+          </label>
         <input type="submit" value="Update">
     </form>
 </div>
